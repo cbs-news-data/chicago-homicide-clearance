@@ -30,6 +30,7 @@ status_schema = pa.DataFrameSchema(
 victims_schema = pa.DataFrameSchema(
     columns={
         "case_no": pa.Column(str, checks=[pa.Check.str_matches(RD_NO_PAT)]),
+        "unique_id": pa.Column(str),
         "victim_race": pa.Column(
             str,
             checks=[
