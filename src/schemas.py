@@ -25,6 +25,7 @@ status_schema = pa.DataFrameSchema(
             nullable=True,
         ),
         "date_cleared": pa.Column("datetime64[ns]", nullable=True),
+        "incident_year": pa.Column(int, checks=[pa.Check.isin(range(2010, 2023))]),
     }
 )
 
